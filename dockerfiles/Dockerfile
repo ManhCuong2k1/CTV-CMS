@@ -4,11 +4,8 @@ RUN apk add --no-cache git
 
 COPY ./package.json /app/
 COPY ./yarn.lock /app/
-COPY ./start.sh /app/
 RUN yarn install
-COPY ./env /app/env/
-COPY ./nuxt /app/nuxt/
-COPY ./src /app/src/
+COPY . .
 
 FROM node:12-alpine
 WORKDIR /app
