@@ -6,7 +6,9 @@ COPY ./package.json /app/
 COPY ./yarn.lock /app/
 COPY ./start.sh /app/
 RUN yarn install
-COPY . .
+COPY ./env /app/env/
+COPY ./nuxt /app/nuxt/
+COPY ./src /app/src/
 
 FROM node:12-alpine
 WORKDIR /app
