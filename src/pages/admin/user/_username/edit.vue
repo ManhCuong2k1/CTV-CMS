@@ -1,6 +1,6 @@
 <template>
     <div>
-        <PageHeader :title="user.username" />
+        <PageHeader :title="user.phone" />
         <UserForm :user-data="user" @submitForm="updateUser" />
     </div>
 </template>
@@ -17,7 +17,7 @@
             PageHeader,
         },
         async asyncData({ params, store }) {
-            await store.dispatch('admin/user/show', params.username);
+            await store.dispatch('admin/user/show', params.phone);
             const user = cloneDeep(store.state.admin.user.user);
             user.is_active = user.deleted_at === null;
             user.is_admin = user.is_admin === 1;

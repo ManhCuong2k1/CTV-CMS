@@ -3,7 +3,7 @@
         class="flex items-center"
     >
         <div class="mr-3">
-            <nuxt-link :to="`/u/${userInfoData.username}/posts`">
+            <nuxt-link :to="`/u/${userInfoData.phone}/posts`">
                 <img
                     :src="userInfoData.avatar ? toImage(userInfoData.avatar, 'avatar') : '/images/avatar-default.png'"
                     alt=""
@@ -14,7 +14,7 @@
         <div>
             <div class="flex md:text-base">
                 <div class="font-bold user-fullname">
-                    <nuxt-link :to="`/u/${userInfoData.username}/posts`">
+                    <nuxt-link :to="`/u/${userInfoData.phone}/posts`">
                         {{ userInfoData.first_name }} {{ userInfoData.last_name }}
                     </nuxt-link>
                 </div>
@@ -22,8 +22,8 @@
                     v-if="showUsername"
                     class="ml-2 md:ml-2 color-custom-3 italic user-fullname"
                 >
-                    <nuxt-link :to="`/u/${userInfoData.username}/posts`">
-                        @{{ userInfoData.username }}
+                    <nuxt-link :to="`/u/${userInfoData.phone}/posts`">
+                        @{{ userInfoData.phone }}
                     </nuxt-link>
                 </div>
                 <span v-if="shouldFollow">
@@ -99,7 +99,7 @@
             toImage,
             async submitFollowUser() {
                 try {
-                    await this.$axios.$post('user/follow/user', { followUsername: this.userInfo.username });
+                    await this.$axios.$post('user/follow/user', { followUsername: this.userInfo.phone });
                     this.userInfoData.isFollowing = true;
                 } catch (e) {
                     this.$message({
@@ -110,7 +110,7 @@
             },
             async submitUnfollowUser() {
                 try {
-                    await this.$axios.$put('user/unfollow/user', { followUsername: this.userInfo.username });
+                    await this.$axios.$put('user/unfollow/user', { followUsername: this.userInfo.phone });
                     this.userInfoData.isFollowing = false;
                 } catch (e) {
                     this.$message({

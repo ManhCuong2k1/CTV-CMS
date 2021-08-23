@@ -33,10 +33,10 @@
             <el-table-column prop="content" label="Mục tiêu" min-width="220">
                 <template slot-scope="scope">
                     <div v-if="scope.row.target === 'distributor'" class="text-line-2">
-                        Nhà phân phối
+                        Nhà cung cấp
                     </div>
                     <div v-if="scope.row.target === 'pointofsale'" class="text-line-2">
-                        Điểm bán
+                        Thành viên
                     </div>
                 </template>
             </el-table-column>

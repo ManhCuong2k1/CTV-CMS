@@ -5,19 +5,14 @@
                 type="index"
                 width="50"
             />
-            <el-table-column prop="name" label="Tên" min-width="200">
+            <el-table-column prop="name" label="Tên">
                 <template slot-scope="scope">
                     <span>{{ scope.row.name }}</span>
                 </template>
             </el-table-column>
-            <el-table-column prop="city" label="Tỉnh/Thành phố">
+            <el-table-column prop="city" label="Khu vực">
                 <template slot-scope="scope">
-                    <span v-if="scope.row.City">{{ scope.row.City.name }}</span>
-                </template>
-            </el-table-column>
-            <el-table-column prop="district" label="Quận/Huyện">
-                <template slot-scope="scope">
-                    <span v-if="scope.row.District">{{ scope.row.District.name }}</span>
+                    <span v-if="scope.row.City">{{ scope.row.City.name }}, {{ scope.row.District.name }}</span>
                 </template>
             </el-table-column>
             <el-table-column prop="email" label="Email">
@@ -40,21 +35,6 @@
                     </el-tag>
                 </template>
             </el-table-column>
-            <!-- <el-table-column prop="oderSuccess" label="Thành công">
-                <template slot-scope="">
-                    <span class="capitalize" />
-                </template>
-            </el-table-column>
-            <el-table-column prop="oderPending" label="Chờ duyệt">
-                <template slot-scope="">
-                    <span />
-                </template>
-            </el-table-column>
-            <el-table-column prop="oderCancel" label="Thất bại">
-                <template slot-scope="">
-                    <span />
-                </template>
-            </el-table-column> -->
             <el-table-column label="Ngày tạo">
                 <template slot-scope="scope">
                     <span>{{ scope.row.createdAt | formatDate }}</span>

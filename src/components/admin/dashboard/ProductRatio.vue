@@ -22,13 +22,13 @@
             return {
                 chartData: {
                     labels: [
-                        'Bia Camel đỏ',
-                        'Bia Camel xanh',
-                        'Bia Camel cam',
-                        'Nước trái cây Camel vị cam',
-                        'Nước trái cây Camel vị xoài',
-                        'Nước tăng lực Camel vàng',
-                        'Nước tăng lực Camel xanh',
+                        'Bia Battay đỏ',
+                        'Bia Battay xanh',
+                        'Bia Battay cam',
+                        'Nước trái cây Battay vị cam',
+                        'Nước trái cây Battay vị xoài',
+                        'Nước tăng lực Battay vàng',
+                        'Nước tăng lực Battay xanh',
                     ],
                     datasets: [
                         {

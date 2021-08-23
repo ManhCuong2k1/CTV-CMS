@@ -8,8 +8,8 @@
                 class="w-full"
                 :rules="rules"
             >
-                <el-form-item label="Tên nhà phân phối" prop="name">
-                    <el-input v-model="distributorForm.name" placeholder="Tên nhà phân phối" />
+                <el-form-item label="Tên nhà cung cấp" prop="name">
+                    <el-input v-model="distributorForm.name" placeholder="Tên nhà cung cấp" />
                 </el-form-item>
                 <el-form-item label="Điện thoại" prop="phone">
                     <el-input v-model="distributorForm.phone" placeholder="Điện thoại" />

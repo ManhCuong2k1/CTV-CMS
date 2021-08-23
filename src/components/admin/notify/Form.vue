@@ -37,11 +37,11 @@
             <el-form-item label="Đối tượng" prop="target" class="w-1/2">
                 <el-select v-model="notifyForm.target" placeholder="Đối tượng">
                     <el-option
-                        :label="'Điểm bán'"
+                        :label="'Thành viên'"
                         :value="'pointofsale'"
                     />
                     <el-option
-                        :label="'Nhà phân phối'"
+                        :label="'Nhà cung cấp'"
                         :value="'distributor'"
                     />
                 </el-select>

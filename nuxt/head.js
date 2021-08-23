@@ -16,7 +16,7 @@ const link = [
     {
         rel: 'alternate',
         type: 'application/rss+xml',
-        name: 'Camel RSS Feed',
+        name: 'Battay RSS Feed',
         href: '/rss',
     },
 ];

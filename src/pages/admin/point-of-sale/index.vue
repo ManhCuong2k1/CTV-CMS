@@ -1,6 +1,6 @@
 <template>
     <div @changePage="updatePage">
-        <PageHeader :title="'Điểm bán'" />
+        <PageHeader :title="'Thành viên'" />
         <div class="w-full 2xl:w-1/2">
             <div class="flex flex-wrap">
                 <div class="mr-5">

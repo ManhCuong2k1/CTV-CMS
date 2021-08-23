@@ -12,7 +12,7 @@
                 />
             </div>
             <div class="mb-2">
-                <el-input v-model="username" placeholder="Tên đăng nhập" />
+                <el-input v-model="phone" placeholder="Tên đăng nhập" />
             </div>
             <div class="mb-2">
                 <el-input v-model="fullname" placeholder="Tên hiển thị" />
@@ -67,7 +67,7 @@
     export default {
         data() {
             return {
-                username: '',
+                phone: '',
                 email: '',
                 fullname: '',
                 password: '',
@@ -95,7 +95,7 @@
                 try {
                     const checkEmail = /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/;
                     // eslint-disable-next-line eqeqeq
-                    if (this.username == '' || this.email == '' || this.fullname == '' || this.password == '' || this.repassword == '') {
+                    if (this.phone == '' || this.email == '' || this.fullname == '' || this.password == '' || this.repassword == '') {
                         this.sendError('Điền đầy đủ các trường');
                     } else if (!checkEmail.test(this.email)) {
                         this.sendError('Nhập đúng định dạng email Example@gmail.com!');
@@ -105,7 +105,7 @@
                         const token = await this.$recaptcha.execute('register');
                         await this.$axios.post('admin/auth/register', {
                             name: this.fullname,
-                            username: this.username,
+                            phone: this.phone,
                             email: this.email,
                             password: this.password,
                             token,

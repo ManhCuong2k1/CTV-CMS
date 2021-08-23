@@ -37,7 +37,7 @@
             </el-submenu>
 
             <SidebarItem icon="el-icon-coordinate" link="/admin/point-of-sale">
-                Điểm bán <span v-if="newNotiTask.newPointOfSale" class="ml-2 bg-red-500 px-2 text-center border border-white rounded-full">{{ newNotiTask.newPointOfSale }}</span>
+                Thành viên <span v-if="newNotiTask.newPointOfSale" class="ml-2 bg-red-500 px-2 text-center border border-white rounded-full">{{ newNotiTask.newPointOfSale }}</span>
             </SidebarItem>
 
             <SidebarItem icon="el-icon-shopping-cart-2" link="/admin/order-sale">
@@ -45,11 +45,7 @@
             </SidebarItem>
 
             <SidebarItem v-if="userLoged.type == 'admin'" icon="el-icon-office-building" link="/admin/distributor">
-                Nhà phân phối
-            </SidebarItem>
-
-            <SidebarItem icon="el-icon-box" link="/admin/order-producer">
-                Đơn sản xuất <span v-if="newNotiTask.newOrderProducer" class="ml-2 bg-red-500 px-2 text-center border border-white rounded-full">{{ newNotiTask.newOrderProducer }}</span>
+                Nhà cung cấp
             </SidebarItem>
 
             <SidebarItem icon="el-icon-milk-tea" link="/admin/product">
@@ -63,9 +59,6 @@
                 </template>
                 <SidebarItem v-if="userLoged.type == 'admin'" icon="el-icon-mobile-phone" link="/admin/sms">
                     SMS
-                </SidebarItem>
-                <SidebarItem v-if="userLoged.type == 'admin'" icon="el-icon-s-ticket" link="/admin/promotion">
-                    Khuyến mãi
                 </SidebarItem>
                 <SidebarItem v-if="userLoged.type == 'admin'" icon="el-icon-document" link="/admin/news">
                     Tin tức
@@ -83,14 +76,8 @@
                 <SidebarItem v-if="userLoged.type == 'admin'" icon="el-icon-s-grid" link="/admin/category">
                     Danh mục sản phẩm
                 </SidebarItem>
-                <SidebarItem v-if="userLoged.type == 'admin'" icon="el-icon-receiving" link="/admin/product-group">
-                    Nhóm sản phẩm
-                </SidebarItem>
                 <SidebarItem v-if="userLoged.type == 'admin'" icon="el-icon-map-location" link="/admin/city">
                     Địa chính
-                </SidebarItem>
-                <SidebarItem icon="el-icon-user-solid" link="/admin/transporter">
-                    Vận chuyển
                 </SidebarItem>
                 <SidebarItem icon="el-icon-picture-outline" link="/admin/image">
                     Thư viện ảnh

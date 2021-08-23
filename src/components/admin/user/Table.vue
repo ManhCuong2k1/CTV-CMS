@@ -3,7 +3,7 @@
         <el-table :data="dataTable" class="w-full">
             <el-table-column
                 fixed
-                prop="username"
+                prop="phone"
                 label="Username"
                 width="150"
             />
@@ -39,7 +39,7 @@
                         icon="el-icon-remove-outline"
                         @click="switchLockUser(scope.row.id, scope.row.deleted_at)"
                     />
-                    <el-button icon="el-icon-edit" @click="$router.push(`/admin/user/${scope.row.username}/edit`)" />
+                    <el-button icon="el-icon-edit" @click="$router.push(`/admin/user/${scope.row.phone}/edit`)" />
                     <el-button icon="el-icon-key" @click="openChangePass(scope.row.id)" />
                 </template>
             </el-table-column>

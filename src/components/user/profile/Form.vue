@@ -7,8 +7,8 @@
             class="md:w-2/3"
             :rules="rules"
         >
-            <el-form-item class="md:w-2/3" label="Tên đăng nhập" prop="username">
-                <el-input v-model="userForm.username" placeholder="Username" disabled />
+            <el-form-item class="md:w-2/3" label="Tên đăng nhập" prop="phone">
+                <el-input v-model="userForm.phone" placeholder="Username" disabled />
             </el-form-item>
             <el-form-item class="md:w-2/3" label="Họ" prop="last_name">
                 <el-input v-model="userForm.last_name" placeholder="Họ" />

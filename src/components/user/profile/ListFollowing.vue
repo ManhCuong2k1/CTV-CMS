@@ -6,7 +6,7 @@
                 :key="item.hash_id"
                 class="items-center md:w-1/2 mb-3 pb-3"
             >
-                <UserCard :user-info="item" :show-username="false" />
+                <UserCard :user-info="item" :show-phone="false" />
             </div>
         </div>
     </div>

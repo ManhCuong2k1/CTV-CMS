@@ -13,7 +13,7 @@
                 <div v-if="userLoged.type == 'admin'" class="mr-5 mb-2">
                     <el-select
                         :value="DistributorLabel"
-                        placeholder="Nhà phân phối"
+                        placeholder="Nhà cung cấp"
                         filterable
                         remote
                         :remote-method="remoteDistributor"

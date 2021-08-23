@@ -67,10 +67,10 @@
                         />
                     </el-select>
                 </el-form-item>
-                <el-form-item v-if="userLoged.type == 'admin'" label="Nhà phân phối" prop="AdminId">
+                <el-form-item v-if="userLoged.type == 'admin'" label="Nhà cung cấp" prop="AdminId">
                     <el-select
                         v-model="pointofsaleForm.AdminId"
-                        placeholder="Nhà phân phối"
+                        placeholder="Nhà cung cấp"
                         filterable
                         remote
                         :remote-method="remoteDistributor"
@@ -86,10 +86,10 @@
                 </el-form-item>
                 <el-form-item>
                     <el-button v-if="pointofsaleForm.status != 'confirm'" type="success" @click="confirmPOS()">
-                        Duyệt điểm bán
+                        Duyệt thành viên
                     </el-button>
                     <el-button v-if="pointofsaleForm.status == 'confirm'" type="danger" @click="disablePOS()">
-                        Khóa điểm bán
+                        Khóa thành viên
                     </el-button>
                     <el-button type="primary" @click="submitForm('pointofsaleForm')">
                         Lưu
@@ -165,7 +165,7 @@
                         { required: true, message: 'Vui lòng nhập quận/huyện', trigger: 'blur' },
                     ],
                     AdminId: [
-                        { required: true, message: 'Vui lòng nhập nhà phân phối', trigger: 'blur' },
+                        { required: true, message: 'Vui lòng nhập nhà cung cấp', trigger: 'blur' },
                     ],
 
                 },
@@ -199,7 +199,7 @@
                 });
             },
             confirmPOS() {
-                this.$confirm('Bạn sẽ duyệt điểm bán này ?', 'Cảnh báo', {
+                this.$confirm('Bạn sẽ duyệt thành viên này ?', 'Cảnh báo', {
                     confirmButtonText: 'Xác nhận',
                     cancelButtonText: 'Bỏ qua',
                     type: 'warning',
@@ -217,7 +217,7 @@
                 });
             },
             disablePOS() {
-                this.$confirm('Bạn sẽ khóa điểm bán này ?', 'Cảnh báo', {
+                this.$confirm('Bạn sẽ khóa thành viên này ?', 'Cảnh báo', {
                     confirmButtonText: 'Xác nhận',
                     cancelButtonText: 'Bỏ qua',
                     type: 'warning',

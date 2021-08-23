@@ -1,6 +1,6 @@
 <template>
     <div>
-        <PageHeader :title="'Tạo nhà phân phối'" />
+        <PageHeader :title="'Tạo nhà cung cấp'" />
         <DistributorForm @submitForm="create" />
     </div>
 </template>

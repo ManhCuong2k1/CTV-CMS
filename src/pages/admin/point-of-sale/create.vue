@@ -1,6 +1,6 @@
 <template>
     <div>
-        <PageHeader :title="'Thêm điểm bán'" />
+        <PageHeader :title="'Thêm thành viên'" />
         <PointOfSaleForm @submitForm="create" />
     </div>
 </template>

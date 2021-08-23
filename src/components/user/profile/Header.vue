@@ -7,37 +7,37 @@
             <div class="flex justify-center">
                 <div class="w-full py-3">
                     <div>
-                        <nuxt-link class="text-gray-900 text-base text-center py-4 border-b hover:text-gray-400" :to="`/u/${userData.username}/posts`">
+                        <nuxt-link class="text-gray-900 text-base text-center py-4 border-b hover:text-gray-400" :to="`/u/${userData.phone}/posts`">
                             Tin tức
                         </nuxt-link>
                     </div>
                     <!-- <div index="1">
-                        <nuxt-link :to="`/u/${userData.username}/posts`">
+                        <nuxt-link :to="`/u/${userData.phone}/posts`">
                             Serrie
                         </nuxt-link>
                     </div> -->
                     <div index="1">
-                        <nuxt-link class="text-gray-900 text-base text-center py-4 border-b hover:text-gray-400" :to="`/u/${userData.username}/reviews`">
+                        <nuxt-link class="text-gray-900 text-base text-center py-4 border-b hover:text-gray-400" :to="`/u/${userData.phone}/reviews`">
                             Nhận xét
                         </nuxt-link>
                     </div>
-                    <div v-if="userData.username === userLoged.username" index="3">
-                        <nuxt-link class="text-gray-900 text-base text-center py-4 border-b hover:text-gray-400" :to="`/u/${userData.username}/profile`">
+                    <div v-if="userData.phone === userLoged.phone" index="3">
+                        <nuxt-link class="text-gray-900 text-base text-center py-4 border-b hover:text-gray-400" :to="`/u/${userData.phone}/profile`">
                             Thông tin
                         </nuxt-link>
                     </div>
                     <div index="3">
-                        <nuxt-link class="text-gray-900 text-base text-center py-4 border-b hover:text-gray-400" :to="`/u/${userData.username}/gallery`">
+                        <nuxt-link class="text-gray-900 text-base text-center py-4 border-b hover:text-gray-400" :to="`/u/${userData.phone}/gallery`">
                             Thư viện
                         </nuxt-link>
                     </div>
                     <div index="4">
-                        <nuxt-link class="text-gray-900 text-base text-center py-4 border-b hover:text-gray-400" :to="`/u/${userData.username}/following`">
+                        <nuxt-link class="text-gray-900 text-base text-center py-4 border-b hover:text-gray-400" :to="`/u/${userData.phone}/following`">
                             Đang theo dõi
                         </nuxt-link>
                     </div>
                     <!-- <div index="5">
-                        <nuxt-link class="text-gray-900 text-base text-center py-4 border-b hover:text-gray-400" :to="`/u/${userData.username}/bookmark`">
+                        <nuxt-link class="text-gray-900 text-base text-center py-4 border-b hover:text-gray-400" :to="`/u/${userData.phone}/bookmark`">
                             Bookmark
                         </nuxt-link>
                     </div> -->

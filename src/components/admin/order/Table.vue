@@ -20,12 +20,6 @@
                     <span>{{ scope.row.PointOfSale.City.name }}, {{ scope.row.PointOfSale.District.name }}</span>
                 </template>
             </el-table-column>
-            <el-table-column prop="transporter" label="Vận chuyển">
-                <template slot-scope="scope">
-                    <span v-if="!scope.row.Transporter">{{ scope.row.TransporterAnoy }}</span>
-                    <span v-else>{{ scope.row.Transporter.name }}</span>
-                </template>
-            </el-table-column>
             <el-table-column prop="totalAfterPromotion" label="Tổng tiền">
                 <template slot-scope="scope">
                     {{ scope.row.totalAfterPromotion || 0 | formatNumber }}
@@ -48,11 +42,6 @@
             </el-table-column>
             <el-table-column label="Hành động" fixed="right" max-width="220">
                 <template slot-scope="scope">
-                    <el-button
-                        :type="scope.row.status === 'canceled' ? 'danger' : ''"
-                        icon="el-icon-delete"
-                        @click="switchDeleteOrder(scope.row.id, scope.row.status)"
-                    />
                     <div>
                         <nuxt-link :to="`/admin/order-sale/${scope.row.id}/edit`">
                             <el-button icon="el-icon-view" />

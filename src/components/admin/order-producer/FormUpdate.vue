@@ -4,7 +4,7 @@
             {{ `Mã đơn: ${data.code}` }}
         </div>
         <div class="text-xl mb-1">
-            {{ `Nhà phân phối: ${data.Admin.name} - Điện thoại: ${data.Admin.phone || ""}` }}
+            {{ `Nhà cung cấp: ${data.Admin.name} - Điện thoại: ${data.Admin.phone || ""}` }}
         </div>
         <div class="text-xl mb-4">
             {{ `Địa chỉ: ${data.Admin.address || ""}, ${data.Admin.District.name}, ${data.Admin.City.name}` }}

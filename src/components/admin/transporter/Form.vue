@@ -43,10 +43,10 @@
                 <el-form-item label="Địa chỉ" prop="address">
                     <el-input v-model="transporterForm.address" placeholder="Địa chỉ" />
                 </el-form-item>
-                <el-form-item v-if="userLoged.type == 'admin'" label="Nhà phân phối" prop="AdminId">
+                <el-form-item v-if="userLoged.type == 'admin'" label="Nhà cung cấp" prop="AdminId">
                     <el-select
                         v-model="transporterForm.AdminId"
-                        placeholder="Nhà phân phối"
+                        placeholder="Nhà cung cấp"
                         filterable
                         remote
                         :remote-method="remoteDistributor"
@@ -140,7 +140,7 @@
                 });
             },
             confirmPOS() {
-                this.$confirm('Bạn sẽ duyệt điểm bán này ?', 'Cảnh báo', {
+                this.$confirm('Bạn sẽ duyệt thành viên này ?', 'Cảnh báo', {
                     confirmButtonText: 'Xác nhận',
                     cancelButtonText: 'Bỏ qua',
                     type: 'warning',

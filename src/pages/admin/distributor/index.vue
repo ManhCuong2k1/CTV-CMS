@@ -1,6 +1,6 @@
 <template>
     <div>
-        <PageHeader :title="'Nhà phân phối'" />
+        <PageHeader :title="'Nhà cung cấp'" />
         <div class="w-full 2xl:w-1/2">
             <div class="flex">
                 <div class="flex-1 mr-5">

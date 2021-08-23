@@ -26,8 +26,8 @@ export const actions = {
         commit('setUsersData', res.data);
     },
 
-    async show({ commit }, username) {
-        const res = await this.$axios.get(`/admin/user/${username}`);
+    async show({ commit }, phone) {
+        const res = await this.$axios.get(`/admin/user/${phone}`);
         commit('setUser', res.data);
     },
 

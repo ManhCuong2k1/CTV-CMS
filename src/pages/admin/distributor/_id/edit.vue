@@ -1,6 +1,6 @@
 <template>
     <div>
-        <PageHeader :title="`Sửa nhà phân phối - ${distributorDetail.name}`" />
+        <PageHeader :title="`Sửa nhà cung cấp - ${distributorDetail.name}`" />
         <DistributorForm :distributor-data="distributorDetail" @submitForm="updateDistributor" />
     </div>
 </template>

@@ -12,14 +12,36 @@
                     <el-input v-model="productForm.name" placeholder="Tên sản phẩm" />
                 </el-col>
             </el-form-item>
-            <el-form-item label="Hiển thị trên App" prop="status">
+            <el-form-item label="Hiển thị trang chủ" prop="onHome">
                 <el-switch
-                    v-model="productForm.status"
+                    v-model="productForm.onHome"
                     active-color="#13ce66"
                     inactive-color="#dcdfe6"
-                    :active-value="'publish'"
-                    :inactive-value="'draft'"
+                    :active-value="1"
+                    :inactive-value="0"
                 />
+            </el-form-item>
+            <el-form-item v-if="productForm.onHome" label="Danh sách trang chủ" prop="specHome">
+                <el-col :span="24">
+                    <el-select
+                        v-model="productForm.specHome"
+                        filterable
+                        placeholder="Vui lòng nhập danh mục"
+                    >
+                        <el-option
+                            :label="'Sản phẩm mới'"
+                            :value="'new'"
+                        />
+                        <el-option
+                            :label="'Sản phẩm bán chạy'"
+                            :value="'hot'"
+                        />
+                        <el-option
+                            :label="'Sản phẩm giá tốt'"
+                            :value="'discount'"
+                        />
+                    </el-select>
+                </el-col>
             </el-form-item>
             <el-form-item label="Ảnh đại diện" prop="avatar">
                 <el-col :span="12">
@@ -68,9 +90,9 @@
                     <Currency v-model="productForm.price" :placeholder="'Giá'" />
                 </el-col>
             </el-form-item>
-            <el-form-item label="Giá khuyến mại" prop="promotionPrice">
+            <el-form-item label="Giá thành viên" prop="promotionPrice">
                 <el-col :span="12">
-                    <Currency v-model="productForm.promotionPrice" :placeholder="'Giá khuyến mại'" />
+                    <Currency v-model="productForm.promotionPrice" :placeholder="'Giá thành viên'" />
                 </el-col>
             </el-form-item>
             <el-form-item label="Đơn vị tính" prop="volumeUnit">
@@ -93,9 +115,6 @@
                         <el-input v-model="productForm.maxPerOrder" min="0" type="number" />
                     </el-form-item>
                 </el-col>
-            </el-form-item>
-            <el-form-item label="Thông tin sản phẩm">
-                <Attributes :data.sync="productForm.attributes" />
             </el-form-item>
             <el-form-item label="Mô tả" prop="content">
                 <el-col :span="24">
@@ -138,13 +157,13 @@
     import { image as toImage } from '~/utils/url';
     import { validString, validPositiveNumbers } from '~/utils/form';
     import Currency from '~/components/admin/shared/form/Currency.vue';
-    import Attributes from './Attributes.vue';
 
     const modelForm = {
         name: '',
         avatar: '',
         ProductCategoryId: '',
         status: 'publish',
+        onHome: 0,
         content: '',
         price: 0,
         promotionPrice: 0,
@@ -161,7 +180,6 @@
             Tinymce,
             Currency,
             ImageFinder,
-            Attributes,
         },
 
         props: {
@@ -205,6 +223,9 @@
                         },
                     ],
                     price: [
+                        { required: true, message: 'Vui lòng nhập giá sản phẩm', trigger: 'blur' },
+                    ],
+                    promotionPrice: [
                         { required: true, message: 'Vui lòng nhập giá sản phẩm', trigger: 'blur' },
                     ],
                 },

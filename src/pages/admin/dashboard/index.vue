@@ -30,34 +30,34 @@
             <BoxNumber
                 :icon="['fas', 'home']"
                 :color="'text-green-400'"
-                title="Điểm bán"
+                title="Thành viên"
                 :value="totalPointOfSale"
             />
             <BoxNumber
                 v-if="userLoged.type == 'admin'"
                 :icon="['fas', 'warehouse']"
                 :color="'text-gray-400'"
-                title="Nhà phân phối"
+                title="Nhà cung cấp"
                 :value="totalDistributor"
             />
             <BoxNumber
                 :icon="['fas', 'home']"
                 :color="'text-red-400'"
-                title="Điểm bán mới"
+                title="Thành viên mới"
                 :value="totalNewPointOfSale"
             />
             <BoxNumber
                 v-if="userLoged.type == 'admin'"
                 :icon="['fas', 'warehouse']"
                 :color="'text-red-400'"
-                title="Nhà phân phối mới"
+                title="Nhà cung cấp mới"
                 :value="totalNewDistributor"
             />
             <BoxNumber
                 v-if="userLoged.type == 'distributor'"
                 :icon="['fas', 'shopping-cart']"
                 :color="'text-red-400'"
-                title="Đơn đang chuyển điểm bán"
+                title="Đơn đang chuyển thành viên"
                 :value="totalOrderShipping"
             />
             <BoxNumber

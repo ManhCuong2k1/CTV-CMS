@@ -17,7 +17,7 @@
                 <div
                     class="color-custom-3 italic user-fullname text-center"
                 >
-                    <span> @{{ userInfo.username }} </span>
+                    <span> @{{ userInfo.phone }} </span>
                 </div>
             </div>
             <div class="flex mt-2 justify-center">

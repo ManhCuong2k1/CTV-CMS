@@ -1,46 +1,41 @@
 <template>
     <div>
-        <div class="text-xl mb-1">
+        <div class="text-xl border-gray-400 border-2 p-2">
             {{ `Mã đơn: ${data.code}` }}
         </div>
-        <div class="text-xl mb-1">
-            {{ `Điểm bán: ${data.PointOfSale.name} - Điện thoại: ${data.PointOfSale.phone}` }}
-        </div>
-        <div class="text-xl mb-1">
-            {{ `Địa chỉ: ${data.PointOfSale.address}, ${data.PointOfSale.District.name}, ${data.PointOfSale.City.name}` }}
-        </div>
-        <div v-if="data.noteDeleted" class="text-xl mb-4">
-            {{ `Lý do huỷ: ${data.noteDeleted || ''}` }}
-        </div>
-        <div class="flex mb-3">
-            <div class="mr-2">
-                <span class="mr-2">Vận chuyển công ty: </span>
-                <el-select
-                    v-model="TransporterId"
-                    placeholder="Tìm nhân viên"
-                    filterable
-                    remote
-                    clearable
-                    :remote-method="remoteTransporter"
-                    :loading="loading"
-                >
-                    <el-option
-                        v-for="item in optionTransporters"
-                        :key="item.slug"
-                        :label="item.label"
-                        :value="item.slug"
-                    />
-                </el-select>
+        <div class="flex mb-2">
+            <div class="w-1/2 border-gray-400 border-2 p-2">
+                <div class="text-xl mb-1">
+                    {{ `Khách hàng: ${data.customerFullname || ""}` }}
+                </div>
+                <div class="text-xl mb-1">
+                    {{ `Điện thoại: ${data.customerPhone || ""}` }}
+                </div>
+                <div class="text-xl mb-1">
+                    {{ `Địa chỉ: ${data.customerAddress || ""}, ${data.District ? data.District.name : ""}, ${data.City ? data.City.name : ""}` }}
+                </div>
+                <div class="text-xl mb-1">
+                    {{ `Ghi chú: ${customerNote || ""}` }}
+                </div>
             </div>
-            <div>
-                <el-button type="primary" @click="saveTransporterId">
-                    Lưu
-                </el-button>
+            <div class="w-1/2 border-gray-400 border-2 p-2">
+                <div class="text-xl mb-1">
+                    {{ `Thành viên: ${data.PointOfSale.name}` }}
+                </div>
+                <div class="text-xl mb-1">
+                    {{ `Điện thoại: ${data.PointOfSale.phone}` }}
+                </div>
+                <div class="text-xl mb-1">
+                    {{ `Địa chỉ: ${data.PointOfSale.address}, ${data.PointOfSale.District.name}, ${data.PointOfSale.City.name}` }}
+                </div>
+                <div v-if="data.noteDeleted" class="text-xl mb-4">
+                    {{ `Lý do huỷ: ${data.noteDeleted || ''}` }}
+                </div>
             </div>
         </div>
         <div class="flex mb-1">
             <div class="mr-2" style="line-height: 40px">
-                Vận chuyển vãng lai:
+                SDT vận chuyển:
             </div>
             <div class="mr-2">
                 <el-input v-model="TransporterAnoy" placeholder="Số điện thoại" />
@@ -55,14 +50,6 @@
             <div class="pb-1">
                 <span class="font-bold text-2xl text-red-500">Thành tiền: </span>
                 <span class="text-2xl text-red-500">{{ (data.total - totalPromotionAmount) || 0 | formatNumber }}đ</span>
-            </div>
-            <div class="pb-1">
-                <span class="font-bold text-xl text-green-500">Giảm giá: </span>
-                <span class="text-xl text-green-500">-{{ totalPromotionAmount || 0 | formatNumber }}đ</span>
-            </div>
-            <div class="pb-1">
-                <span class="font-bold text-xl text-gray-500">Tổng đơn: </span>
-                <span class="text-xl text-gray-500">{{ data.total || 0 | formatNumber }}đ</span>
             </div>
             <div class="mt-2">
                 <status-tag class="-ml-2" :status="data.status" />

@@ -6,14 +6,9 @@
                     <span>{{ scope.row.name }}</span>
                 </template>
             </el-table-column>
-            <el-table-column prop="city" label="Tỉnh/Thành phố" width="180">
+            <el-table-column prop="city" label="Khu vực" width="180">
                 <template slot-scope="scope">
-                    <span>{{ scope.row.City.name }}</span>
-                </template>
-            </el-table-column>
-            <el-table-column prop="district" label="Quận/Huyện" width="180">
-                <template slot-scope="scope">
-                    <span>{{ scope.row.District.name }}</span>
+                    <span>{{ scope.row.City.name }}, {{ scope.row.District.name }}</span>
                 </template>
             </el-table-column>
             <el-table-column prop="email" label="Email">
@@ -21,26 +16,11 @@
                     <span>{{ scope.row.email }}</span>
                 </template>
             </el-table-column>
-            <el-table-column prop="phone" label="Điện thoại" width="180">
+            <el-table-column prop="phone" label="Điện thoại">
                 <template slot-scope="scope">
                     <span>{{ scope.row.phone }}</span>
                 </template>
             </el-table-column>
-            <!-- <el-table-column prop="oderSuccess" label="Thành công">
-                <template slot-scope="">
-                    <span class="capitalize" />
-                </template>
-            </el-table-column>
-            <el-table-column prop="oderPending" label="Chờ duyệt">
-                <template slot-scope="">
-                    <span />
-                </template>
-            </el-table-column>
-            <el-table-column prop="oderCancel" label="Thất bại">
-                <template slot-scope="">
-                    <span />
-                </template>
-            </el-table-column> -->
             <el-table-column label="Ngày tạo">
                 <template slot-scope="scope">
                     <span>{{ scope.row.createdAt | formatDate }}</span>
@@ -50,7 +30,7 @@
                 <template slot-scope="scope">
                     <el-button
                         :type="scope.row.deletedAt == null ? '' : 'danger'"
-                        icon="el-icon-delete"
+                        icon="el-icon-remove-outline"
                         @click="switchDeleteDistrictbutor(scope.row.id, scope.row.deletedAt)"
                     />
                     <div class="inline-block">
@@ -69,9 +49,6 @@
     import { mapState } from 'vuex';
 
     export default {
-        //     components: {
-        //     },
-
         props: {
             data: {
                 type: Array,
@@ -82,7 +59,6 @@
         data() {
             return {
                 dataTable: cloneDeep(this.data),
-                // loadding: false,
             };
         },
 

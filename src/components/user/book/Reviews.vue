@@ -7,7 +7,7 @@
         >
             <div class="flex items-center">
                 <div class="mr-8">
-                    <nuxt-link :to="`/u/${item.author.username}/posts`">
+                    <nuxt-link :to="`/u/${item.author.phone}/posts`">
                         <img
                             :src="item.author.avatar ? toImage(item.author.avatar, 'avatar') : '/images/avatar-default.png' "
                             alt=""
@@ -18,14 +18,14 @@
                 <div>
                     <div class="flex text-base">
                         <div class="font-bold">
-                            <nuxt-link :to="`/u/${item.author.username}/posts`">
+                            <nuxt-link :to="`/u/${item.author.phone}/posts`">
                                 {{ item.author.first_name }} {{ item.author.last_name }}
                             </nuxt-link>
                         </div>
                         <div
                             class="ml-2 color-custom-3 italic"
                         >
-                            @{{ item.author.username }}
+                            @{{ item.author.phone }}
                         </div>
                     </div>
                     <div class="flex mt-2">
@@ -76,7 +76,7 @@
         methods: {
             toImage,
             makeReviewLink(item) {
-                return `/danh-gia-sach/${stringToSlug(item.author.username)}-${item.hash_id}`;
+                return `/danh-gia-sach/${stringToSlug(item.author.phone)}-${item.hash_id}`;
             },
         },
     };

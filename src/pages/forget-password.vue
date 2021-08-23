@@ -50,7 +50,7 @@
         },
         computed: {
             backToIndex() {
-                return `/admin/${this.username}`;
+                return `/admin/${this.phone}`;
             },
         },
         methods: {

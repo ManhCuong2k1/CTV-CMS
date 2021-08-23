@@ -7,9 +7,9 @@
             class="w-2/3"
             :rules="rules"
         >
-            <el-form-item label="Tên đăng nhập" prop="username">
+            <el-form-item label="Tên đăng nhập" prop="phone">
                 <el-col :span="12">
-                    <el-input v-model="userForm.username" placeholder="Username" disabled />
+                    <el-input v-model="userForm.phone" placeholder="Username" disabled />
                 </el-col>
             </el-form-item>
             <el-form-item label="Họ" prop="last_name">

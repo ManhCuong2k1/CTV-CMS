@@ -43,16 +43,6 @@
                     <span>{{ scope.row.volume || 0 | formatNumber }}</span>
                 </template>
             </el-table-column>
-            <!-- <el-table-column prop="totalPick" label="Lượt chọn">
-                <template slot-scope="scope">
-                    <span>{{ scope.row.totalPick || 0 | formatNumber }}</span>
-                </template>
-            </el-table-column>
-            <el-table-column prop="totalView" label="Lượt xem">
-                <template slot-scope="scope">
-                    <span>{{ scope.row.totalView || 0 | formatNumber }}</span>
-                </template>
-            </el-table-column> -->
             <el-table-column v-if="userLoged.type == 'admin'" label="Hành động">
                 <template slot-scope="scope">
                     <el-button-group>

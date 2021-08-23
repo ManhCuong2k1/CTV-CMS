@@ -6,7 +6,7 @@
         >
             <div class="flex items-center">
                 <div class="mr-3">
-                    <nuxt-link :to="`/u/${authComment.username}/posts`">
+                    <nuxt-link :to="`/u/${authComment.phone}/posts`">
                         <img
                             :src="authComment.avatar ? toImage(authComment.avatar, 'avatar') : '/images/avatar-default.png'"
                             alt=""
@@ -17,14 +17,14 @@
                 <div>
                     <div class="flex text-base">
                         <div class="font-bold">
-                            <nuxt-link :to="`/u/${authComment.username}/posts`">
+                            <nuxt-link :to="`/u/${authComment.phone}/posts`">
                                 {{ authComment.first_name }} {{ authComment.last_name }}
                             </nuxt-link>
                         </div>
                         <div
                             class="ml-2 color-custom-3 italic"
                         >
-                            @{{ authComment.username }}
+                            @{{ authComment.phone }}
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                             >
                         </span>
                     </div>
-                    <nuxt-link :to="`/u/${item.author.username}/posts`">
+                    <nuxt-link :to="`/u/${item.author.phone}/posts`">
                         <div class="flex text-base">
                             <div class="font-bold">
                                 <span> {{ item.author.first_name }} {{ item.author.last_name }}</span>
@@ -79,7 +79,7 @@
                             <div
                                 class="ml-2 color-custom-3 italic"
                             >
-                                @{{ item.author.username }}
+                                @{{ item.author.phone }}
                             </div>
                         </div>
                     </nuxt-link>

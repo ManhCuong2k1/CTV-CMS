@@ -1,16 +1,16 @@
 import { APP_URL } from './env';
 
-const title = 'Camel Admin';
-const description = 'Camel';
+const title = 'Battay Admin';
+const description = 'Battay';
 
 const meta = [
     {
         name: 'application-name',
-        content: 'Camel',
+        content: 'Battay',
     },
     {
         property: 'og:site_name',
-        content: 'Camel',
+        content: 'Battay',
     },
     {
         hid: 'description',

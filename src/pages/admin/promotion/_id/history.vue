@@ -17,7 +17,7 @@
                     <div class="mr-5">
                         <el-input
                             v-model="tableFilter.searchKey"
-                            placeholder="Tìm kiếm tên điểm bán"
+                            placeholder="Tìm kiếm tên thành viên"
                             class="input-with-select mr-5"
                             clearable
                             @clear="updateSearchKeyproduct"
@@ -44,7 +44,7 @@
                             <span>{{ scope.row.Product.name }}</span>
                         </template>
                     </el-table-column>
-                    <el-table-column prop="PointOfSaleName" label="Điểm bán">
+                    <el-table-column prop="PointOfSaleName" label="Thành viên">
                         <template slot-scope="scope">
                             <span>{{ scope.row.Order.PointOfSale.name }}</span>
                         </template>

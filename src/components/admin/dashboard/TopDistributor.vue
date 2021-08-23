@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <span class="font-bold text-gray-600 text-lg">Top nhà phân phối</span>
+            <span class="font-bold text-gray-600 text-lg">Top nhà cung cấp</span>
         </div>
         <el-table
             :data="tableData"

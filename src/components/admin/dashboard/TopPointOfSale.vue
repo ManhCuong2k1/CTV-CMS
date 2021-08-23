@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <span class="font-bold text-gray-600 text-lg">Top điểm bán</span>
+            <span class="font-bold text-gray-600 text-lg">Top thành viên</span>
         </div>
         <el-table
             :data="tableData"
@@ -10,7 +10,7 @@
         >
             <el-table-column
                 prop="name"
-                label="Điểm bán"
+                label="Thành viên"
                 width="180"
             >
                 <template slot-scope="scope">

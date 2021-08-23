@@ -1,6 +1,6 @@
 <template>
     <div>
-        <PageHeader :title="'Cập nhật đơn phân phối'" />
+        <PageHeader :title="'Cập nhật đơn '" />
         <FormUpdate :data="orderDetail" />
     </div>
 </template>

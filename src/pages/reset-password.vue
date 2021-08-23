@@ -7,12 +7,12 @@
             <div class="mb-5">
                 <el-alert
                     v-if="errorLogin"
-                    title="Wrong username/email or password"
+                    title="Wrong phone/email or password"
                     type="error"
                 />
             </div>
             <div class="mb-2">
-                <el-input v-model="username" placeholder="Tên đăng nhập" />
+                <el-input v-model="phone" placeholder="Tên đăng nhập" />
             </div>
             <div class="mb-2">
                 <el-input v-model="fullname" placeholder="Tên hiển thị" />
@@ -62,7 +62,7 @@
     export default {
         data() {
             return {
-                username: '',
+                phone: '',
                 email: '',
                 fullname: '',
                 password: '',
@@ -84,7 +84,7 @@
                 try {
                     const token = await this.$recaptcha.execute('register');
                     await this.$axios.post('/auth/register', {
-                        username: this.username,
+                        phone: this.phone,
                         email: this.email,
                         fullname: this.fullname,
                         password: this.password,
