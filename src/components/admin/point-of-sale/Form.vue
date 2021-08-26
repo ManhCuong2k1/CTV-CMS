@@ -8,11 +8,8 @@
                 class="w-full"
                 :rules="rules"
             >
-                <el-form-item label="Tên chủ cửa hàng" prop="ownerName">
-                    <el-input v-model="pointofsaleForm.ownerName" placeholder="Tên chủ cửa hàng" />
-                </el-form-item>
-                <el-form-item label="Tên cửa hàng" prop="name">
-                    <el-input v-model="pointofsaleForm.name" placeholder="Tên cửa hàng" />
+                <el-form-item label="Tên thành viên" prop="name">
+                    <el-input v-model="pointofsaleForm.name" placeholder="Tên thành viên" />
                 </el-form-item>
                 <el-form-item label="Điện thoại" prop="phone">
                     <el-input v-model="pointofsaleForm.phone" placeholder="Điện thoại" />
@@ -61,23 +58,6 @@
                     >
                         <el-option
                             v-for="item in optionDistricts"
-                            :key="item.slug"
-                            :label="item.label"
-                            :value="item.slug"
-                        />
-                    </el-select>
-                </el-form-item>
-                <el-form-item v-if="userLoged.type == 'admin'" label="Nhà cung cấp" prop="AdminId">
-                    <el-select
-                        v-model="pointofsaleForm.AdminId"
-                        placeholder="Nhà cung cấp"
-                        filterable
-                        remote
-                        :remote-method="remoteDistributor"
-                        :loading="loading"
-                    >
-                        <el-option
-                            v-for="item in optionDistributors"
                             :key="item.slug"
                             :label="item.label"
                             :value="item.slug"

@@ -189,6 +189,11 @@ export default {
     build: {
         extractCSS: isProduction,
         transpile: [/^element-ui/],
+        babel: {
+            plugins: [
+                ['@babel/plugin-proposal-private-property-in-object', { loose: true }],
+            ],
+        },
     },
 
     privateRuntimeConfig: {

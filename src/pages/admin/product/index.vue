@@ -1,7 +1,7 @@
 <template>
     <div>
         <PageHeader :title="'Sản phẩm'" />
-        <div class="w-full md:w-1/2">
+        <div class="w-full">
             <div class="mt-5 flex flex-wrap md:flex-nowrap">
                 <Select
                     class="mr-5 mb-2"
