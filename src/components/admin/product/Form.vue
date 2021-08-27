@@ -118,9 +118,11 @@
             </el-form-item>
             <el-form-item label="Mô tả" prop="content">
                 <el-col :span="24">
-                    <Tinymce
-                        :content="productForm.content"
-                        @contentChange="contentChange"
+                    <el-input
+                        v-model="productForm.content"
+                        type="textarea"
+                        :autosize="{ minRows: 2, maxRows: 4}"
+                        @change="contentChange"
                     />
                 </el-col>
             </el-form-item>
@@ -151,7 +153,6 @@
 <script>
     import { mapState } from 'vuex';
     import cloneDeep from 'lodash/cloneDeep';
-    import Tinymce from '~/components/editor/Tinymce.vue';
     import { PRODUCT_STATUS } from '~/constants/product';
     import ImageFinder from '~/components/ImageFinder.vue';
     import { image as toImage } from '~/utils/url';
@@ -177,7 +178,6 @@
 
     export default {
         components: {
-            Tinymce,
             Currency,
             ImageFinder,
         },

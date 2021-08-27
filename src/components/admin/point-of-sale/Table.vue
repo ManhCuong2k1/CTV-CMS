@@ -25,6 +25,11 @@
                     <span>{{ scope.row.phone }}</span>
                 </template>
             </el-table-column>
+            <el-table-column prop="lastTotalRevenue" label="Lợi nhuận">
+                <template slot-scope="scope">
+                    <span>{{ scope.row.lastTotalRevenue || 0 | formatNumber }}</span>
+                </template>
+            </el-table-column>
             <el-table-column prop="status" label="Trạng thái">
                 <template slot-scope="scope">
                     <el-tag v-if="scope.row.status !== 'confirm'" type="danger" effect="dark">
@@ -45,6 +50,11 @@
                     <div class="inline-block">
                         <router-link :to="`/admin/point-of-sale/${scope.row.id}/edit`">
                             <el-button icon="el-icon-edit" />
+                        </router-link>
+                    </div>
+                    <div class="inline-block">
+                        <router-link :to="`/admin/point-of-sale/${scope.row.id}/billing`">
+                            <el-button icon="el-icon-s-promotion" />
                         </router-link>
                     </div>
                 </template>

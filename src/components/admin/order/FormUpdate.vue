@@ -1,10 +1,10 @@
 <template>
     <div>
-        <div class="text-xl border-gray-400 border-2 p-2">
+        <div class="text-xl p-2">
             {{ `Mã đơn: ${data.code}` }}
         </div>
         <div class="flex mb-2">
-            <div class="w-1/2 border-gray-400 border-2 p-2">
+            <div class="w-1/2 p-2">
                 <div class="text-xl mb-1">
                     {{ `Khách hàng: ${data.customerFullname || ""}` }}
                 </div>
@@ -18,7 +18,7 @@
                     {{ `Ghi chú: ${customerNote || ""}` }}
                 </div>
             </div>
-            <div class="w-1/2 border-gray-400 border-2 p-2">
+            <div class="w-1/2 p-2">
                 <div class="text-xl mb-1">
                     {{ `Thành viên: ${data.PointOfSale.name}` }}
                 </div>
@@ -121,7 +121,7 @@
                 </span>
                 <span>
                     <el-button
-                        v-if="data.status !== 'canceled'"
+                        v-if="data.status !== 'canceled' && data.status !== 'success'"
                         type="danger"
                         icon="el-icon-delete"
                         @click="updateOrder('canceled')"
