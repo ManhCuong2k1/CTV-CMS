@@ -7,22 +7,22 @@
                 type="index"
                 width="60"
             />
-            <el-table-column prop="title" label="Tên cộng tác viên">
+            <el-table-column prop="name" label="Tên cộng tác viên">
                 <template slot-scope="scope">
                     <span>{{ scope.row.name }}</span>
                 </template>
             </el-table-column>
-            <el-table-column prop="summary" label="Tổng doanh thu">
+            <el-table-column prop="totalRevenue" label="Tổng doanh thu">
                 <template slot-scope="scope">
                     <span class="text-line-2">{{ formatPrice(scope.row.totalRevenue) }}</span>
                 </template>
             </el-table-column>
-            <el-table-column prop="categories" label="Doanh thu đã thanh toán">
+            <el-table-column prop="revenuePaid" label="Doanh thu đã thanh toán">
                 <template slot-scope="scope">
                     <span class="text-line-2">{{ formatPrice(scope.row.revenuePaid) }}</span>
                 </template>
             </el-table-column>
-            <el-table-column prop="categories" label="Doanh thu còn lại">
+            <el-table-column prop="remainingRevenue" label="Doanh thu còn lại">
                 <template slot-scope="scope">
                     <span class="text-line-2">{{ formatPrice(scope.row.remainingRevenue) }}</span>
                 </template>
@@ -32,9 +32,7 @@
 </template>
 
 <script>
-    // import { findIndex } from 'lodash';
     import cloneDeep from 'lodash/cloneDeep';
-    import { mapState } from 'vuex';
 
     export default {
         components: {
@@ -50,9 +48,6 @@
                 dataTable: cloneDeep(this.data),
                 loadding: false,
             };
-        },
-        computed: {
-            ...mapState('admin/news', ['new']),
         },
         watch: {
             data: {

@@ -60,16 +60,6 @@
             };
         },
 
-        data() {
-            return {
-                dialogForm: false,
-                dialogView: false,
-                productForm: null,
-                productFormView: null,
-                dateValue: undefined,
-            };
-        },
-
         computed: {
             ...mapState('admin/pointofsale', ['pointofsales', 'pagination']),
         },
@@ -81,10 +71,6 @@
             },
             updatePage(page) {
                 this.fetchData({ page });
-            },
-            updateSelect(status) {
-                const page = null;
-                this.fetchData({ status, page });
             },
             updateSearchKey() {
                 const page = null;
