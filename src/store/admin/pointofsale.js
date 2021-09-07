@@ -32,6 +32,11 @@ export const actions = {
         commit('setPointOfSales', res.data);
     },
 
+    async fetchRevenue({ commit }, params) {
+        const res = await this.$axios.get('/admin/point-of-sale/all/revenue', { params });
+        commit('setPointOfSales', res.data);
+    },
+
     async show({ commit }, id) {
         const res = await this.$axios.get(`/admin/point-of-sale/${id}`);
         commit('setPointOfSaleDetail', res.data);

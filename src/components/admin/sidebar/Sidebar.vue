@@ -31,9 +31,9 @@
                 <SidebarItem icon="el-icon-data-line" link="/admin/report/revenue">
                     Doanh thu
                 </SidebarItem>
-                <!-- <SidebarItem icon="el-icon-document" link="/admin/report/product-sold">
-                    Sản phẩm
-                </SidebarItem> -->
+                <SidebarItem icon="el-icon-document" link="/admin/collaborator-revenue">
+                    Doanh thu CTV
+                </SidebarItem>
             </el-submenu>
 
             <SidebarItem icon="el-icon-coordinate" link="/admin/point-of-sale">
